@@ -12,6 +12,6 @@ export class RestController {
         };
 
         ctx.status = statusCode;
-        ctx.body = result;
+        ctx.body = response;
     }
 }

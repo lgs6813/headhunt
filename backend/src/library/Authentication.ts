@@ -12,7 +12,16 @@ export class Authentication {
     }
 
     public authentication(ctx: Context, next: Function) {
-        ctx['user'] = 'asdf';
+        ctx['user'] = {
+            UId: 1,
+            name: 'jongwan',
+            phone: '123-1234-1234',
+            type: 'admin',
+            user_id: 'snn77',
+            password: 'asdf',
+            age: 26,
+            create_date: 'w'
+        }
         if (this.isException(ctx)) {
             return next();
         }
@@ -44,7 +53,8 @@ export class Authentication {
     }
 
     private isException(ctx: Context) {
-        return (ctx.url.indexOf('guest') !== -1);
+        // return (ctx.url.indexOf('guest') !== -1);
+        return true;
     }
 
     private adminNeeded(ctx: Context) {

@@ -9,13 +9,14 @@ export class UserRouter{
 
     constructor(db: Connection){
         this.router = new koaRouter({
-            prefix: "/user",
+            prefix: "/user", 
         });
-        this.userController = new UserController(db);
+        this.userController = new UserController(db); 
     }
 
     private setRoutes(){
-        this.router.get('/', (ctx: Context, next: Function) => this.userController.getUser(ctx, next));
+        this.router.get('/', (ctx: Context, next: Function) => this.userController.getMyInfo(ctx, next));
+        this.router.put('/', (ctx: Context, next: Function) => this.userController.createUser(ctx, next));
     }
 
     public getRouter(){
