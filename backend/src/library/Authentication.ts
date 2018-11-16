@@ -16,7 +16,7 @@ export class Authentication {
             UId: 1,
             name: 'jongwan',
             phone: '123-1234-1234',
-            type: 'admin',
+            type: 'freelancer',
             user_id: 'snn77',
             password: 'asdf',
             age: 26,
